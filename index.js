@@ -118,7 +118,7 @@ app.get("/searchuser", async (req, res) => {
                 });
             }
             //search user
-            const result = await User.findOne({ username: username });
+            const result = await User.findOne({ username: username }).select("-password");
             //if user found
             if (result) {
                 return res.json({
