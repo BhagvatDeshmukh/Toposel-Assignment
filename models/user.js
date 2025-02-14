@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
                 message: "Username should not contain only numbers"
             } 
         },
-        password: { type: String, required: true},
+        password: { type: String, required: true,select: false },
         fullName: { type: String, required: true, 
             validate: {
                 validator: function(value) {
